@@ -1,8 +1,8 @@
-import { Schema, model, connect } from 'mongoose';
+import { Document, Types } from 'mongoose';
 
-export  type Order= {
-  email:string,
-  product:number,
-  quantity:number,
-  totalPrice:number
+export interface Order extends Document {
+  email: string;
+  product: Types.ObjectId; // Correctly typed ObjectId reference
+  quantity: number;
+  totalPrice: number;
 }

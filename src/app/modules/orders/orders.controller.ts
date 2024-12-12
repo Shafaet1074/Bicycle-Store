@@ -13,11 +13,10 @@ const createOrders = async (req: Request, res: Response) => {
       data: result,
     });
   } catch (err) {
-    console.error(err);
     res.status(400).json({
       success: false,
       message: 'Failed to create product',
-      error: err.message,
+      error: (err as Error).message,
     });
   }
 };
@@ -34,11 +33,10 @@ const calculateRevenue = async (_req: Request, res: Response) => {
       },
     });
   } catch (err) {
-    console.error(err);
     res.status(500).json({
       success: false,
       message: 'Failed to calculate revenue',
-      error: err.message,
+      error: (err as Error).message, // Assert type here
     });
   }
 };

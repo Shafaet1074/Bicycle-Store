@@ -1,12 +1,14 @@
 import globals from 'globals';
 import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
-
-const eslintPluginPrettierRecommended = require('eslint-plugin-prettier/recommended');
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  { files: ['**/*.{js,mjs,cjs,ts}'] },
+  {
+    files: ['**/*.{js,mjs,cjs,ts}'],
+    ignores: ['node_modules', 'dist'], // Ignored files and directories
+  },
   {
     rules: {
       'no-unused-vars': 'error',

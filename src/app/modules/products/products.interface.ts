@@ -1,5 +1,3 @@
-import { Schema, model, connect } from 'mongoose';
-
 export type Product = {
   name: string;
   brand: string;
